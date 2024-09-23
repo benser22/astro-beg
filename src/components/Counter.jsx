@@ -1,13 +1,23 @@
-import  { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks';
 
-export function Counter(){
-  const [counter, setCounter ] = useState(0)
+export function Counter() {
+  const [counter, setCounter] = useState(0);
 
   return (
-    <>
-      <span class="text-yellow-300 text-xl mr-4">{counter}</span>
-      <button class="border px-4 py-2 text-xl" onClick={()=> setCounter(counter => counter + 1)}>+</button> 
-      <button class="border px-4 py-2 text-xl"  onClick={()=> setCounter(counter => counter - 1)}>-</button>
-    </>
-  )
+    <div class="flex items-center justify-center space-x-4 bg-gray-800 p-4 rounded-lg shadow-lg">
+      <span class="text-yellow-300 text-3xl font-bold">{counter}</span>
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded transition duration-200"
+        onClick={() => setCounter((counter) => counter + 1)}
+      >
+        +
+      </button>
+      <button
+        class="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded transition duration-200"
+        onClick={() => setCounter((counter) => counter - 1)}
+      >
+        -
+      </button>
+    </div>
+  );
 }

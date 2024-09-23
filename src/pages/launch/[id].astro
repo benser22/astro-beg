@@ -5,7 +5,6 @@ import Layout from '../../layouts/Layout.astro'
 export const prerender = false
 
 const { id } = Astro.params
-console.log(id) 
 
 let launch
 
@@ -13,8 +12,6 @@ if(id){
   launch  = await getLaunchBy({ id })
 }
 
-
-console.log(launch) 
 ---
 <Layout title={`Lanzamiento ${id}`}>
   <article class="flex gap-y-4 flex-col">
